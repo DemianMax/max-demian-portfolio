@@ -1,6 +1,7 @@
 "use client"
 
 import { useTimeline } from "@/hooks/useTimeline"
+import Image from "next/image"
 
 export default function ProfessionalTimeline() {
   const { timeline, loading, error } = useTimeline()
@@ -55,7 +56,7 @@ export default function ProfessionalTimeline() {
               className={`relative mb-12 md:mb-16 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}
             >
               <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-12" : "md:ml-auto md:pl-12"}`}>
-                <div className="bg-white/80 p-6 rounded-lg shadow-lg relative">
+                <div className={`bg-white/80 p-6 rounded-lg shadow-lg relative ${index % 2 === 0 ? "text-right" : ""}`}>
                   {/* Timeline dot */}
                   <div
                     className="absolute top-6 w-4 h-4 bg-[#ffcc00] rounded-full border-4 border-white hidden md:block"
@@ -77,9 +78,34 @@ export default function ProfessionalTimeline() {
                     {item.position}
                   </h3>
 
-                  <h4 className="text-lg font-semibold mb-2" style={{ color: "#2E86C1" }}>
-                    {item.company}
-                  </h4>
+                  {/* Company with logo and link */}
+                  <div className={`flex items-center mb-2 ${index % 2 === 0 ? "flex-row-reverse" : ""}`}>
+                    {item.logo_url && (
+                      <div className={`w-8 h-8 ${index % 2 === 0 ? "ml-3" : "mr-3"} relative flex-shrink-0`}>
+                        <Image
+                          src={item.logo_url || "/placeholder.svg"}
+                          alt={`${item.company} logo`}
+                          fill
+                          className="object-contain rounded"
+                        />
+                      </div>
+                    )}
+                    {item.company_url ? (
+                      <a
+                        href={item.company_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg font-semibold hover:text-[#ffcc00] transition-colors"
+                        style={{ color: "#2E86C1" }}
+                      >
+                        {item.company}
+                      </a>
+                    ) : (
+                      <h4 className="text-lg font-semibold" style={{ color: "#2E86C1" }}>
+                        {item.company}
+                      </h4>
+                    )}
+                  </div>
 
                   <p className="text-sm mb-3" style={{ color: "#768192" }}>
                     {item.location}

@@ -77,6 +77,8 @@ export interface Database {
           location: string
           description: string
           order_index: number
+          logo_url?: string
+          company_url?: string
           created_at: string
           updated_at: string
         }
@@ -87,6 +89,8 @@ export interface Database {
           location: string
           description: string
           order_index?: number
+          logo_url?: string
+          company_url?: string
         }
         Update: {
           company?: string
@@ -95,6 +99,8 @@ export interface Database {
           location?: string
           description?: string
           order_index?: number
+          logo_url?: string
+          company_url?: string
         }
       }
     }

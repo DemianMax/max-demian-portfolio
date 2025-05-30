@@ -11,6 +11,8 @@ export interface TimelineItem {
   location: string
   description: string
   order_index: number
+  logo_url?: string
+  company_url?: string
   created_at: string
 }
 
