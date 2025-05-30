@@ -164,16 +164,26 @@ export default function Portfolio() {
         </div>
 
         <div className="relative z-10 text-center text-white px-4 mt-auto mb-16">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 animate-fade-in">Olá, sou o Max.</h1>
-          <p className="text-xl md:text-2xl mb-6 animate-fade-in-delay">UX/UI Designer, Ilustrador e Infografista.</p>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto animate-fade-in-delay-2">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">Olá, sou o Max.</h1>
+          <p className="text-lg md:text-xl mb-6 animate-fade-in-delay">UX/UI Designer, Ilustrador e Infografista.</p>
+          <p className="text-base md:text-lg max-w-2xl mx-auto mb-8 animate-fade-in-delay-2">
             Transformando complexidade em experiências intuitivas há mais de duas décadas.
           </p>
+          <button
+            onClick={() => {
+              const element = document.querySelector("#trabalhos-destaque")
+              element?.scrollIntoView({ behavior: "smooth" })
+            }}
+            className="px-8 py-3 rounded-full font-semibold transition-all hover:scale-105 animate-fade-in-delay-2"
+            style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
+          >
+            Ver Meus Trabalhos
+          </button>
         </div>
       </section>
 
       {/* Featured Works */}
-      <section className="py-20 px-4 md:px-8">
+      <section id="trabalhos-destaque" className="py-20 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12" style={{ color: "#434A54" }}>
             Trabalhos em Destaque
