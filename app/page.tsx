@@ -11,8 +11,6 @@ import {
   Phone,
   Linkedin,
   ExternalLink,
-  ChevronLeft,
-  ChevronRight,
   User,
   Palette,
   Video,
@@ -264,46 +262,66 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Complete Portfolio Carousel */}
+      {/* Behance Portfolio Integration */}
       <section className="py-20 px-4 md:px-8 bg-white/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12" style={{ color: "#434A54" }}>
-            Veja Meu Portfólio Completo
+            Projetos do Behance
           </h2>
 
-          <div className="relative">
-            <div className="overflow-hidden rounded-lg">
-              <div
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+          {/* Lista horizontal de projetos */}
+          <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+            {[
+              {
+                name: "Dashboard B2B Sistema de Gestão",
+                tools: "Figma • Photoshop • After Effects",
+                image: "/placeholder.svg?height=300&width=400",
+              },
+              {
+                name: "Infográfico Interativo Dados Corporativos",
+                tools: "Illustrator • After Effects • InDesign",
+                image: "/placeholder.svg?height=300&width=400",
+              },
+              {
+                name: "Identidade Visual Tech Startup",
+                tools: "Illustrator • Photoshop • Figma",
+                image: "/placeholder.svg?height=300&width=400",
+              },
+              {
+                name: "App Mobile E-commerce",
+                tools: "Figma • Sketch • Principle",
+                image: "/placeholder.svg?height=300&width=400",
+              },
+              {
+                name: "Design Editorial Revista Digital",
+                tools: "InDesign • Photoshop • Illustrator",
+                image: "/placeholder.svg?height=300&width=400",
+              },
+            ].map((project, index) => (
+              <a
+                key={index}
+                href="https://www.behance.net/maxdemian"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300"
               >
-                {portfolioImages.map((image, index) => (
-                  <div key={index} className="w-full flex-shrink-0">
-                    <Image
-                      src={image || "/placeholder.svg"}
-                      alt={`Portfolio ${index + 1}`}
-                      width={1200}
-                      height={600}
-                      className="w-full h-96 object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+                <Image src={project.image || "/placeholder.svg"} alt={project.name} fill className="object-cover" />
 
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-colors"
-            >
-              <ChevronLeft className="w-6 h-6" style={{ color: "#434A54" }} />
-            </button>
+                {/* Overlay com gradiente */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full transition-colors"
-            >
-              <ChevronRight className="w-6 h-6" style={{ color: "#434A54" }} />
-            </button>
+                {/* Textos sobrepostos */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="font-bold text-lg mb-2 line-clamp-2">{project.name}</h3>
+                  <p className="text-sm opacity-90">{project.tools}</p>
+                </div>
+
+                {/* Ícone de link no hover */}
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <ExternalLink className="w-6 h-6 text-white" />
+                </div>
+              </a>
+            ))}
           </div>
 
           <div className="text-center mt-8">
@@ -312,7 +330,7 @@ export default function Portfolio() {
                 className="rounded-full font-semibold px-8 py-3"
                 style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
               >
-                Ver no Behance
+                Ver Portfólio Completo no Behance
                 <ExternalLink className="ml-2 w-4 h-4" />
               </Button>
             </a>
