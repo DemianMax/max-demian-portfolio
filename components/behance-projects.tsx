@@ -74,7 +74,7 @@ export default function BehanceProjects() {
       <div className="text-center mt-8">
         <a href="https://www.behance.net/maxdemian" target="_blank" rel="noopener noreferrer">
           <Button
-            className="rounded-full font-semibold px-8 py-3 transition-colors hover:bg-[#86711d]"
+            className="rounded-full font-semibold px-8 py-3"
             style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
           >
             Ver Portfólio Completo no Behance

@@ -209,7 +209,7 @@ export default function ProjectDetail() {
           </h1>
           <Button
             onClick={() => router.push("/")}
-            className="mt-4 rounded-full transition-colors hover:bg-[#86711d]"
+            className="mt-4 rounded-full"
             style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
           >
             Voltar ao Portfólio
@@ -294,7 +294,7 @@ export default function ProjectDetail() {
           <div className="mt-16 text-center">
             <Button
               onClick={() => router.push("/")}
-              className="rounded-full px-8 py-3 transition-colors hover:bg-[#86711d]"
+              className="rounded-full px-8 py-3"
               style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />

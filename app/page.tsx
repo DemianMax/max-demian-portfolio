@@ -67,7 +67,7 @@ export default function Portfolio() {
               const element = document.querySelector("#trabalhos-destaque")
               element?.scrollIntoView({ behavior: "smooth" })
             }}
-            className="px-8 py-3 rounded-full font-semibold transition-colors hover:bg-[#86711d] animate-fade-in-delay-2"
+            className="px-8 py-3 rounded-full font-semibold transition-all hover:scale-105 animate-fade-in-delay-2"
             style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
           >
             Ver Meus Trabalhos
@@ -75,21 +75,21 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Featured Works - altura reduzida */}
-      <section id="trabalhos-destaque" className="py-16 px-4 md:px-8">
+      {/* Featured Works */}
+      <section id="trabalhos-destaque" className="py-20 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-8" style={{ color: "#434A54" }}>
+          <h2 className="text-4xl font-bold text-center mb-12" style={{ color: "#434A54" }}>
             Trabalhos em Destaque
           </h2>
 
           {/* Category Menu */}
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center mb-12">
             <div className="flex space-x-4 bg-white/50 rounded-full p-2">
               <button
                 onClick={() => setActiveCategory("ux-ui")}
                 className={`px-6 py-3 rounded-full transition-all ${
                   activeCategory === "ux-ui"
-                    ? "bg-[#ffcc00] text-[#434A54] font-semibold hover:bg-[#86711d]"
+                    ? "bg-[#ffcc00] text-[#434A54] font-semibold"
                     : "text-[#434A54] hover:bg-white/50"
                 }`}
               >
@@ -99,7 +99,7 @@ export default function Portfolio() {
                 onClick={() => setActiveCategory("infografia")}
                 className={`px-6 py-3 rounded-full transition-all ${
                   activeCategory === "infografia"
-                    ? "bg-[#ffcc00] text-[#434A54] font-semibold hover:bg-[#86711d]"
+                    ? "bg-[#ffcc00] text-[#434A54] font-semibold"
                     : "text-[#434A54] hover:bg-white/50"
                 }`}
               >
@@ -109,7 +109,7 @@ export default function Portfolio() {
                 onClick={() => setActiveCategory("ilustracao")}
                 className={`px-6 py-3 rounded-full transition-all ${
                   activeCategory === "ilustracao"
-                    ? "bg-[#ffcc00] text-[#434A54] font-semibold hover:bg-[#86711d]"
+                    ? "bg-[#ffcc00] text-[#434A54] font-semibold"
                     : "text-[#434A54] hover:bg-white/50"
                 }`}
               >
@@ -119,7 +119,7 @@ export default function Portfolio() {
           </div>
 
           {/* Projects Grid - 3 colunas fixas */}
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid lg:grid-cols-3 gap-8">
             <FeaturedWorksGrid category={activeCategory} />
           </div>
         </div>
