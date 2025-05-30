@@ -2,10 +2,6 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
 import {
   Mail,
   Phone,
@@ -25,79 +21,8 @@ import {
 } from "lucide-react"
 import Navbar from "@/components/navbar"
 import ProfessionalTimeline from "@/components/professional-timeline"
-
-// Mock data for projects
-const projects = {
-  "ux-ui": [
-    {
-      id: 1,
-      title: "Sistema B2B Dashboard",
-      description: "Interface completa para gestão empresarial com foco na experiência do usuário.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["#Figma", "#UserResearch", "#Prototipagem", "#DesignSystem"],
-    },
-    {
-      id: 2,
-      title: "App Mobile E-commerce",
-      description: "Aplicativo de compras com experiência otimizada para conversão.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["#Sketch", "#UserTesting", "#ResponsiveDesign", "#B2C"],
-    },
-    {
-      id: 3,
-      title: "Plataforma SaaS",
-      description: "Interface intuitiva para software de gestão empresarial.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["#Framer", "#DesignThinking", "#Scrum", "#B2B"],
-    },
-  ],
-  infografia: [
-    {
-      id: 4,
-      title: "Relatório Anual Interativo",
-      description: "Infográfico digital com dados corporativos e storytelling visual.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["#Illustrator", "#AfterEffects", "#DataViz", "#Storytelling"],
-    },
-    {
-      id: 5,
-      title: "Guia de Processos",
-      description: "Visualização de fluxos complexos de forma simplificada.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["#Photoshop", "#InformationDesign", "#ProcessMapping"],
-    },
-    {
-      id: 6,
-      title: "Dashboard Analytics",
-      description: "Representação visual de métricas e KPIs empresariais.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["#Figma", "#DataVisualization", "#Analytics", "#KPI"],
-    },
-  ],
-  ilustracao: [
-    {
-      id: 7,
-      title: "Identidade Visual Corporativa",
-      description: "Conjunto de ilustrações para marca e comunicação empresarial.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["#Illustrator", "#BrandDesign", "#VectorArt", "#Corporate"],
-    },
-    {
-      id: 8,
-      title: "Animações para Web",
-      description: "Ilustrações animadas para interfaces digitais.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["#AfterEffects", "#WebAnimation", "#Motion", "#Interactive"],
-    },
-    {
-      id: 9,
-      title: "Editorial Digital",
-      description: "Ilustrações para conteúdo jornalístico e editorial.",
-      image: "/placeholder.svg?height=300&width=400",
-      tags: ["#Photoshop", "#Editorial", "#DigitalArt", "#Journalism"],
-    },
-  ],
-}
+import BehanceProjects from "@/components/behance-projects"
+import FeaturedWorksGrid from "@/components/featured-works-grid"
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("ux-ui")
@@ -142,7 +67,7 @@ export default function Portfolio() {
               const element = document.querySelector("#trabalhos-destaque")
               element?.scrollIntoView({ behavior: "smooth" })
             }}
-            className="px-8 py-3 rounded-full font-semibold transition-all hover:scale-105 animate-fade-in-delay-2"
+            className="px-8 py-3 rounded-full font-semibold transition-colors hover:bg-[#86711d] animate-fade-in-delay-2"
             style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
           >
             Ver Meus Trabalhos
@@ -150,21 +75,21 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Featured Works */}
-      <section id="trabalhos-destaque" className="py-20 px-4 md:px-8">
+      {/* Featured Works - altura reduzida */}
+      <section id="trabalhos-destaque" className="py-16 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12" style={{ color: "#434A54" }}>
+          <h2 className="text-4xl font-bold text-center mb-8" style={{ color: "#434A54" }}>
             Trabalhos em Destaque
           </h2>
 
           {/* Category Menu */}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-8">
             <div className="flex space-x-4 bg-white/50 rounded-full p-2">
               <button
                 onClick={() => setActiveCategory("ux-ui")}
                 className={`px-6 py-3 rounded-full transition-all ${
                   activeCategory === "ux-ui"
-                    ? "bg-[#ffcc00] text-[#434A54] font-semibold"
+                    ? "bg-[#ffcc00] text-[#434A54] font-semibold hover:bg-[#86711d]"
                     : "text-[#434A54] hover:bg-white/50"
                 }`}
               >
@@ -174,7 +99,7 @@ export default function Portfolio() {
                 onClick={() => setActiveCategory("infografia")}
                 className={`px-6 py-3 rounded-full transition-all ${
                   activeCategory === "infografia"
-                    ? "bg-[#ffcc00] text-[#434A54] font-semibold"
+                    ? "bg-[#ffcc00] text-[#434A54] font-semibold hover:bg-[#86711d]"
                     : "text-[#434A54] hover:bg-white/50"
                 }`}
               >
@@ -184,7 +109,7 @@ export default function Portfolio() {
                 onClick={() => setActiveCategory("ilustracao")}
                 className={`px-6 py-3 rounded-full transition-all ${
                   activeCategory === "ilustracao"
-                    ? "bg-[#ffcc00] text-[#434A54] font-semibold"
+                    ? "bg-[#ffcc00] text-[#434A54] font-semibold hover:bg-[#86711d]"
                     : "text-[#434A54] hover:bg-white/50"
                 }`}
               >
@@ -193,41 +118,9 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects[activeCategory as keyof typeof projects].map((project) => (
-              <Card
-                key={project.id}
-                className="overflow-hidden hover:shadow-lg transition-shadow bg-white/80 backdrop-blur-sm"
-              >
-                <div className="relative h-48">
-                  <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2" style={{ color: "#434A54" }}>
-                    {project.title}
-                  </h3>
-                  <p className="mb-4" style={{ color: "#768192" }}>
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, index) => (
-                      <Badge key={index} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                  <Link href={`/projeto/${project.id}`}>
-                    <Button
-                      className="w-full rounded-full font-semibold"
-                      style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
-                    >
-                      Veja Mais
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Projects Grid - 3 colunas fixas */}
+          <div className="grid lg:grid-cols-3 gap-6">
+            <FeaturedWorksGrid category={activeCategory} />
           </div>
         </div>
       </section>
@@ -238,73 +131,7 @@ export default function Portfolio() {
           <h2 className="text-4xl font-bold text-center mb-12" style={{ color: "#434A54" }}>
             Projetos do Behance
           </h2>
-
-          {/* Lista horizontal de projetos */}
-          <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
-            {[
-              {
-                name: "Dashboard B2B Sistema de Gestão",
-                tools: "Figma • Photoshop • After Effects",
-                image: "/placeholder.svg?height=300&width=400",
-              },
-              {
-                name: "Infográfico Interativo Dados Corporativos",
-                tools: "Illustrator • After Effects • InDesign",
-                image: "/placeholder.svg?height=300&width=400",
-              },
-              {
-                name: "Identidade Visual Tech Startup",
-                tools: "Illustrator • Photoshop • Figma",
-                image: "/placeholder.svg?height=300&width=400",
-              },
-              {
-                name: "App Mobile E-commerce",
-                tools: "Figma • Sketch • Principle",
-                image: "/placeholder.svg?height=300&width=400",
-              },
-              {
-                name: "Design Editorial Revista Digital",
-                tools: "InDesign • Photoshop • Illustrator",
-                image: "/placeholder.svg?height=300&width=400",
-              },
-            ].map((project, index) => (
-              <a
-                key={index}
-                href="https://www.behance.net/maxdemian"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300"
-              >
-                <Image src={project.image || "/placeholder.svg"} alt={project.name} fill className="object-cover" />
-
-                {/* Overlay com gradiente */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                {/* Textos sobrepostos */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="font-bold text-lg mb-2 line-clamp-2">{project.name}</h3>
-                  <p className="text-sm opacity-90">{project.tools}</p>
-                </div>
-
-                {/* Ícone de link no hover */}
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ExternalLink className="w-6 h-6 text-white" />
-                </div>
-              </a>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <a href="https://www.behance.net/maxdemian" target="_blank" rel="noopener noreferrer">
-              <Button
-                className="rounded-full font-semibold px-8 py-3"
-                style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
-              >
-                Ver Portfólio Completo no Behance
-                <ExternalLink className="ml-2 w-4 h-4" />
-              </Button>
-            </a>
-          </div>
+          <BehanceProjects />
         </div>
       </section>
 
@@ -320,16 +147,30 @@ export default function Portfolio() {
             <h3 className="text-2xl font-semibold mb-8 text-center" style={{ color: "#434A54" }}>
               Softwares
             </h3>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center justify-items-center">
-              {["Figma", "Framer", "Photoshop", "Illustrator", "After Effects", "Sketch"].map((software) => (
-                <div key={software} className="text-center">
-                  <div className="w-16 h-16 bg-white/50 rounded-lg flex items-center justify-center mb-2">
-                    <span className="text-2xl font-bold" style={{ color: "#434A54" }}>
-                      {software.charAt(0)}
-                    </span>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center">
+              {[
+                {
+                  name: "Figma",
+                  logo: "data:image/png;base64,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",
+                },
+                { name: "Framer", logo: "/placeholder.svg?height=64&width=64" },
+                { name: "Photoshop", logo: "/placeholder.svg?height=64&width=64" },
+                { name: "Illustrator", logo: "/placeholder.svg?height=64&width=64" },
+                { name: "After Effects", logo: "/placeholder.svg?height=64&width=64" },
+                { name: "Sketch", logo: "/placeholder.svg?height=64&width=64" },
+              ].map((software) => (
+                <div key={software.name} className="text-center">
+                  <div className="w-16 h-16 bg-white/50 rounded-lg flex items-center justify-center mb-2 p-2">
+                    <Image
+                      src={software.logo || "/placeholder.svg"}
+                      alt={`${software.name} logo`}
+                      width={48}
+                      height={48}
+                      className="object-contain"
+                    />
                   </div>
-                  <p className="text-sm" style={{ color: "#768192" }}>
-                    {software}
+                  <p className="text-sm font-medium" style={{ color: "#434A54" }}>
+                    {software.name}
                   </p>
                 </div>
               ))}

@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { useParams, useRouter } from "next/navigation"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { ArrowLeft } from "lucide-react"
 
 // Mock project data
@@ -210,7 +209,7 @@ export default function ProjectDetail() {
           </h1>
           <Button
             onClick={() => router.push("/")}
-            className="mt-4 rounded-full"
+            className="mt-4 rounded-full transition-colors hover:bg-[#86711d]"
             style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
           >
             Voltar ao Portfólio
@@ -259,9 +258,9 @@ export default function ProjectDetail() {
             </p>
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag: string, index: number) => (
-                <Badge key={index} variant="secondary" className="text-sm">
+                <span key={index} className="text-sm font-medium" style={{ color: "#768192" }}>
                   {tag}
-                </Badge>
+                </span>
               ))}
             </div>
           </div>
@@ -295,7 +294,7 @@ export default function ProjectDetail() {
           <div className="mt-16 text-center">
             <Button
               onClick={() => router.push("/")}
-              className="rounded-full px-8 py-3"
+              className="rounded-full px-8 py-3 transition-colors hover:bg-[#86711d]"
               style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />

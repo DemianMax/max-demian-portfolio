@@ -103,6 +103,73 @@ export interface Database {
           company_url?: string
         }
       }
+      behance_projects: {
+        Row: {
+          id: string
+          title: string
+          description?: string
+          tools?: string
+          image_url?: string
+          behance_url?: string
+          order_index: number
+          is_active: boolean
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          title: string
+          description?: string
+          tools?: string
+          image_url?: string
+          behance_url?: string
+          order_index?: number
+          is_active?: boolean
+        }
+        Update: {
+          title?: string
+          description?: string
+          tools?: string
+          image_url?: string
+          behance_url?: string
+          order_index?: number
+          is_active?: boolean
+        }
+      }
+      featured_works: {
+        Row: {
+          id: string
+          title: string
+          description: string
+          category: string
+          image_url?: string
+          tags: string[]
+          project_url?: string
+          order_index: number
+          is_active: boolean
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          title: string
+          description: string
+          category: string
+          image_url?: string
+          tags?: string[]
+          project_url?: string
+          order_index?: number
+          is_active?: boolean
+        }
+        Update: {
+          title?: string
+          description?: string
+          category?: string
+          image_url?: string
+          tags?: string[]
+          project_url?: string
+          order_index?: number
+          is_active?: boolean
+        }
+      }
     }
   }
 }
