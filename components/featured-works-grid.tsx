@@ -40,14 +40,17 @@ export default function FeaturedWorksGrid({ category }: FeaturedWorksGridProps) 
   return (
     <>
       {works.map((work) => (
-        <Card key={work.id} className="overflow-hidden transition-shadow duration-300 hover:shadow-xl bg-white/90">
+        <Card
+          key={work.id}
+          className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white/90 backdrop-blur-sm"
+        >
           {/* Imagem em destaque - maior */}
           <div className="relative h-64 overflow-hidden">
             <Image
               src={work.image_url || "/placeholder.svg?height=400&width=600"}
               alt={work.title}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-300 hover:scale-110"
             />
             {/* Overlay sutil */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
@@ -72,7 +75,7 @@ export default function FeaturedWorksGrid({ category }: FeaturedWorksGridProps) 
 
             <Link href={work.project_url || "#"}>
               <Button
-                className="w-full rounded-full font-semibold transition-colors"
+                className="w-full rounded-full font-semibold hover:scale-105 transition-transform"
                 style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
               >
                 Ver Projeto

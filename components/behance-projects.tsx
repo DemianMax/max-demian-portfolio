@@ -44,7 +44,7 @@ export default function BehanceProjects() {
             href={project.behance_url || "https://www.behance.net/maxdemian"}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl"
+            className="group relative flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300"
           >
             <Image
               src={project.image_url || "/placeholder.svg?height=300&width=400"}
