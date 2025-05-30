@@ -68,6 +68,35 @@ export interface Database {
           visitor_ip?: string
         }
       }
+      career_timeline: {
+        Row: {
+          id: string
+          company: string
+          position: string
+          period: string
+          location: string
+          description: string
+          order_index: number
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          company: string
+          position: string
+          period: string
+          location: string
+          description: string
+          order_index?: number
+        }
+        Update: {
+          company?: string
+          position?: string
+          period?: string
+          location?: string
+          description?: string
+          order_index?: number
+        }
+      }
     }
   }
 }

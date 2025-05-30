@@ -23,7 +23,10 @@ export function useTimeline() {
     async function fetchTimeline() {
       try {
         setLoading(true)
-        const { data, error } = await supabase.from("timeline").select("*").order("order_index", { ascending: false }) // Mais recente primeiro
+        const { data, error } = await supabase
+          .from("career_timeline")
+          .select("*")
+          .order("order_index", { ascending: false }) // Mais recente primeiro
 
         if (error) throw error
 

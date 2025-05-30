@@ -85,6 +85,7 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Adiciona padding para o scroll não ficar embaixo do menu fixo */
 }
 
 /* Custom scrollbar */
@@ -103,6 +104,16 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #e6b800;
+}
+
+/* Esconder scrollbar mas manter funcionalidade */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 
 /* Subtle texture overlay */

@@ -23,6 +23,8 @@ import {
   Users,
   Zap,
 } from "lucide-react"
+import Navbar from "@/components/navbar"
+import ProfessionalTimeline from "@/components/professional-timeline"
 
 // Mock data for projects
 const projects = {
@@ -97,41 +99,6 @@ const projects = {
   ],
 }
 
-const timeline = [
-  {
-    company: "Tech Solutions Corp",
-    position: "Senior UX/UI Designer",
-    period: "2020 - Presente",
-    location: "São Paulo, SP",
-    description:
-      "Liderança em projetos de UX para sistemas B2B complexos, implementação de design systems e metodologias ágeis.",
-  },
-  {
-    company: "Digital Media Group",
-    position: "UX Designer",
-    period: "2017 - 2020",
-    location: "São Paulo, SP",
-    description:
-      "Desenvolvimento de interfaces para plataformas digitais, pesquisa com usuários e otimização de conversão.",
-  },
-  {
-    company: "Jornal Regional Sul",
-    position: "Designer Gráfico / Web Designer",
-    period: "2010 - 2017",
-    location: "Porto Alegre, RS",
-    description:
-      "Inovação em storytelling digital, criação de infográficos interativos e design para portais de notícias.",
-  },
-  {
-    company: "Agência Criativa",
-    position: "Designer Júnior",
-    period: "2005 - 2010",
-    location: "Porto Alegre, RS",
-    description:
-      "Início da carreira focado em usabilidade e atendimento ao público, desenvolvimento de peças publicitárias.",
-  },
-]
-
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("ux-ui")
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -154,8 +121,11 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#BDCBD6" }}>
+      {/* Navbar */}
+      <Navbar />
+
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col items-center justify-end overflow-hidden">
+      <section id="hero" className="relative h-screen flex flex-col items-center justify-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/hero-bg.png" alt="Hero Background" fill className="object-cover" priority />
           <div className="absolute inset-0 bg-black/40" />
@@ -263,7 +233,7 @@ export default function Portfolio() {
       </section>
 
       {/* Behance Portfolio Integration */}
-      <section className="py-20 px-4 md:px-8 bg-white/30">
+      <section id="behance-projetos" className="py-20 px-4 md:px-8 bg-white/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12" style={{ color: "#434A54" }}>
             Projetos do Behance
@@ -339,7 +309,7 @@ export default function Portfolio() {
       </section>
 
       {/* Technical Skills */}
-      <section className="py-20 px-4 md:px-8">
+      <section id="habilidades" className="py-20 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16" style={{ color: "#434A54" }}>
             Habilidades Técnicas
@@ -440,7 +410,7 @@ export default function Portfolio() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 px-4 md:px-8 bg-white/30">
+      <section id="sobre" className="py-20 px-4 md:px-8 bg-white/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16" style={{ color: "#434A54" }}>
             Olá eu sou Max Demian
@@ -485,66 +455,10 @@ export default function Portfolio() {
       </section>
 
       {/* Professional Timeline */}
-      <section className="py-20 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-8" style={{ color: "#434A54" }}>
-            Trajetória Profissional
-          </h2>
-          <p className="text-xl text-center mb-16" style={{ color: "#768192" }}>
-            Uma jornada de crescimento contínuo no universo do design e experiência do usuário.
-          </p>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-[#ffcc00] hidden md:block" />
-
-            {timeline.map((item, index) => (
-              <div
-                key={index}
-                className={`relative mb-12 md:mb-16 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}
-              >
-                <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-12" : "md:ml-auto md:pl-12"}`}>
-                  <div className="bg-white/80 p-6 rounded-lg shadow-lg relative">
-                    {/* Timeline dot */}
-                    <div
-                      className="absolute top-6 w-4 h-4 bg-[#ffcc00] rounded-full border-4 border-white hidden md:block"
-                      style={{
-                        [index % 2 === 0 ? "right" : "left"]: "-2.5rem",
-                      }}
-                    />
-
-                    <div className="mb-2">
-                      <span
-                        className="text-sm font-semibold px-3 py-1 rounded-full"
-                        style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
-                      >
-                        {item.period}
-                      </span>
-                    </div>
-
-                    <h3 className="text-xl font-bold mb-1" style={{ color: "#434A54" }}>
-                      {item.position}
-                    </h3>
-
-                    <h4 className="text-lg font-semibold mb-2" style={{ color: "#2E86C1" }}>
-                      {item.company}
-                    </h4>
-
-                    <p className="text-sm mb-3" style={{ color: "#768192" }}>
-                      {item.location}
-                    </p>
-
-                    <p style={{ color: "#434A54" }}>{item.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProfessionalTimeline />
 
       {/* Contact Section */}
-      <section className="py-20 px-4 md:px-8 bg-white/30">
+      <section id="contato" className="py-20 px-4 md:px-8 bg-white/30">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-16" style={{ color: "#434A54" }}>
             Vamos Conversar
