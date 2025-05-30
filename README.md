@@ -1,30 +1,28 @@
-# Max demian portfolio
+# Max Demian - Portfólio Profissional
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+#Portfólio profissional de Max Demian, UX/UI Designer com mais de duas décadas de experiência em design, ilustração e infografia.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/max3demian-1757s-projects/v0-max-demian-portfolio)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/nUD3S5cObNO)
+## 🚀 Acesse o Portfólio
 
-## Overview
+**[Ver Portfólio Online](https://[seu-usuario].github.io/max-demian-portfolio)**
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## 🛠 Tecnologias
 
-## Deployment
+- Next.js 14 com App Router
+- TypeScript
+- Tailwind CSS
+- Shadcn/ui
+- GitHub Pages
 
-Your project is live at:
+## 📱 Características
 
-**[https://vercel.com/max3demian-1757s-projects/v0-max-demian-portfolio](https://vercel.com/max3demian-1757s-projects/v0-max-demian-portfolio)**
+- ✅ Design responsivo
+- ✅ Otimizado para SEO
+- ✅ Animações suaves
+- ✅ Carregamento rápido
 
-## Build your app
+## 📞 Contato
 
-Continue building your app on:
-
-**[https://v0.dev/chat/projects/nUD3S5cObNO](https://v0.dev/chat/projects/nUD3S5cObNO)**
-
-## How It Works
-
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+- **Email:** max3demian@gmail.com
+- **LinkedIn:** [maxdemian](https://www.linkedin.com/in/maxdemian/)
+- **Behance:** [maxdemian](https://www.behance.net/maxdemian)
