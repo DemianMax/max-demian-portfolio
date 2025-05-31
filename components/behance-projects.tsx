@@ -44,7 +44,7 @@ export default function BehanceProjects() {
             href={project.behance_url || "https://www.behance.net/maxdemian"}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300"
+            className="group relative flex-shrink-0 w-80 h-60 rounded-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl"
           >
             <Image
               src={project.image_url || "/placeholder.svg?height=300&width=400"}
@@ -74,7 +74,7 @@ export default function BehanceProjects() {
       <div className="text-center mt-8">
         <a href="https://www.behance.net/maxdemian" target="_blank" rel="noopener noreferrer">
           <Button
-            className="rounded-full font-semibold px-8 py-3"
+            className="rounded-full font-semibold px-8 py-3 transition-colors hover:bg-[#86711d]"
             style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
           >
             Ver Portfólio Completo no Behance

@@ -42,25 +42,25 @@ export default function FeaturedWorksGrid({ category }: FeaturedWorksGridProps) 
       {works.map((work) => (
         <Card
           key={work.id}
-          className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white/90 backdrop-blur-sm"
+          className="overflow-hidden transition-shadow duration-300 hover:shadow-xl bg-white/90 border-0"
         >
-          {/* Imagem em destaque - maior */}
-          <div className="relative h-64 overflow-hidden">
+          {/* Imagem em destaque - altura reduzida */}
+          <div className="relative h-48 overflow-hidden">
             <Image
-              src={work.image_url || "/placeholder.svg?height=400&width=600"}
+              src={work.image_url || "/placeholder.svg?height=300&width=600"}
               alt={work.title}
               fill
-              className="object-cover transition-transform duration-300 hover:scale-110"
+              className="object-cover"
             />
             {/* Overlay sutil */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           </div>
 
-          <CardContent className="p-6">
-            <h3 className="text-xl font-bold mb-3 line-clamp-2" style={{ color: "#434A54" }}>
+          <CardContent className="p-5">
+            <h3 className="text-lg font-bold mb-2 line-clamp-2" style={{ color: "#434A54" }}>
               {work.title}
             </h3>
-            <p className="text-sm mb-4 line-clamp-3" style={{ color: "#768192" }}>
+            <p className="text-sm mb-3 line-clamp-2" style={{ color: "#768192" }}>
               {work.description}
             </p>
 
@@ -75,7 +75,7 @@ export default function FeaturedWorksGrid({ category }: FeaturedWorksGridProps) 
 
             <Link href={work.project_url || "#"}>
               <Button
-                className="w-full rounded-full font-semibold hover:scale-105 transition-transform"
+                className="w-full rounded-full font-semibold transition-colors hover:bg-[#86711d]"
                 style={{ backgroundColor: "#ffcc00", color: "#434A54" }}
               >
                 Ver Projeto
